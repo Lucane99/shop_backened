@@ -17,6 +17,7 @@ module.exports.userLogin = async (req, res) => {
           user: {
             token,
             email,
+            fullname: userExist.fullname,
             isAdmin: userExist.isAdmin,
             shippingAddress: userExist.shippingAddress
           }
@@ -94,6 +95,7 @@ module.exports.getUserById = async (req, res) => {
         user: {
           token: user.token,
           email: user.email,
+          fullname: user.fullname,
           isAdmin: user.isAdmin,
           shippingAddress: user.shippingAddress
         }
@@ -149,5 +151,4 @@ module.exports.userUpdate = async (req, res) => {
     });
   }
 }
-
 
